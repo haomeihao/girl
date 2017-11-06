@@ -8,6 +8,7 @@ import com.imooc.girl.core.domain.Girl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,9 +31,12 @@ public class GirlController {
     private GirlService girlService;
 
     @GetMapping(value = "/girls")
+    @Cacheable(value = "girls")
     public List<Girl> getList() {
+        List<Girl> all = girlRepository.findAll();
         log.info("222222");
-        return girlRepository.findAll();
+        System.out.println("若下面没出现“无缓存的时候调用”字样且能打印出数据表示测试成功");
+        return all;
     }
 
     @PostMapping(value = "/girls")

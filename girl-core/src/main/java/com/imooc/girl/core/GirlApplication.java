@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 //@EnableScheduling
 //@ServletComponentScan
-@EntityScan(basePackages = "com.imooc.girl.core.domain")
+@MapperScan(basePackages = "com.imooc.girl.core.mapper")
 public class GirlApplication {
 
     public static void main(String[] args) {
