@@ -1,5 +1,6 @@
 package com.imooc.girl.core.mapper;
 
+import com.imooc.girl.core.mapper.slave.GirlMapper;
 import com.imooc.girl.core.model.Girl;
 import junit.framework.TestCase;
 import org.junit.Assert;
@@ -10,8 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by hmh on 2017/11/6.

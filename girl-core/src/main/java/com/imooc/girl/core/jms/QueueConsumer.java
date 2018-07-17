@@ -32,8 +32,15 @@ public class QueueConsumer {
         // 6 创建一个消费者
         MessageConsumer consumer = session.createConsumer(destination);
 
-
         // 7 创建监听器监听消息
+        onListenMessage(consumer);
+
+        // 8 关闭连接
+//        connection.close();
+    }
+
+    //创建监听器监听消息
+    protected static void onListenMessage(MessageConsumer consumer) throws JMSException {
         consumer.setMessageListener(new MessageListener() {
             @Override
             public void onMessage(Message message) {
@@ -45,9 +52,5 @@ public class QueueConsumer {
                 }
             }
         });
-
-
-        // 8 关闭连接
-//        connection.close();
     }
 }
